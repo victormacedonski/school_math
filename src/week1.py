@@ -14,8 +14,10 @@
 
 """
 import csv
+import os
 
 def find_part_by_number(filename,part_number):
+    filename = os.path.join(os.path.dirname(__file__),'..','data','stock.csv')
     with open(filename, 'r', encoding='cp1251') as f:
         reader = csv.DictReader(f)
         for row in reader:
